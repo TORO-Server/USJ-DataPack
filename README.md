@@ -1,6 +1,6 @@
 # USJ-DataPack
 
-TORO Serverにある テーマパークUSJ のために作られた データパック
+TORO Server にある テーマパーク USJ のために作られた データパック
 
 WorldEdit を導入し、 `//setbiome usj:unko` を実行すると
 
@@ -9,3 +9,11 @@ WorldEdit を導入し、 `//setbiome usj:unko` を実行すると
 ## 機能一覧
 
 - バイオーム追加 `usj:unko`
+
+## データパックの zip ファイルの自動生成について
+
+GitHub Actions を利用してデータパックの zip ファイルを自動生成しています。
+
+### ファイルの説明
+
+`zip.py` データパックの zip ファイルを自動で生成して、データパックの sha1 の値をコンソールに出力する。
