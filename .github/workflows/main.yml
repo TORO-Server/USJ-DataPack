@@ -1,0 +1,35 @@
+name: Release DataPack
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: git config
+        run: |
+          git config --global core.autocrlf true
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+          architecture: "x64"
+
+      - name: Build DataPack
+        run: |
+          sha1=$(python3 zip.py)
+          echo "sha1: $sha1" | tee -a .github/ReleaseBody.txt
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          body_path: .github/ReleaseBody.txt
+          files: USJ-DataPack.zip
+
+permissions:
+  contents: write
