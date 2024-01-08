@@ -1,6 +1,6 @@
 # USJ-DataPack
 
-TORO サーバーにある テーマパーク USJ のために作られた データパック
+TORO サーバーにある テーマパーク USJ のために作られたデータパック
 
 WorldEdit を導入し、 `//setbiome usj:unko` を実行すると
 
